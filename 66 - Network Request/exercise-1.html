@@ -1,0 +1,45 @@
+<html>
+  <body>
+    <div id="container">
+      <ul class="todo-list"></ul>
+    </div>
+  </body>
+</html>
+
+<script>
+  // code here
+
+  async function bye(){
+
+const prova = await fetch ('https://jsonplaceholder.typicode.com/todos')
+
+  .then((resolve)=>{
+    return resolve.json()
+
+
+
+  }).then((pacchetto)=>{
+   console.log(pacchetto)
+
+   pacchetto.forEach(element => {
+     console.log(element.title)
+
+     let li = document.createElement('li')
+     li.innerText = element.title
+
+     document.querySelector('.todo-list').append(li)
+
+   });
+
+
+    
+  })
+
+
+}
+
+bye()
+
+</script>
+
+

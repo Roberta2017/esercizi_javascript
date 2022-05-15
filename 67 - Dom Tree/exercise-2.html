@@ -1,0 +1,37 @@
+<html>
+
+<body>
+  <div id="container" style="display: flex; align-items: center;"></div>
+</body>
+
+</html>
+
+<script>
+
+async function request(){
+const prova = await fetch('https://jsonplaceholder.typicode.com/todos/4')
+.then((req)=>{
+  return req.json()
+}).then((pack)=>{
+  return pack;
+})
+let h2 = document.createElement('h2');
+
+let container = document.querySelector('#container');
+container.append(h2);
+
+h2.innerText= prova.title;
+
+let check = document.createElement('input');
+
+check.setAttribute('type', 'checkbox');
+
+check.setAttribute('checked','true');
+
+container.append(check);
+
+
+
+}
+request()
+</script>

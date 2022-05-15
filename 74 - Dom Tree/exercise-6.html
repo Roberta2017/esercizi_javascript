@@ -1,0 +1,49 @@
+<html>
+
+<body>
+  <div id="container">
+    <h2>Person's Form</h2>
+    <form id="person-form">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>
+
+<script>
+  function initForm() {
+
+    let lab = document.createElement('label');
+    let form = document.getElementById('person-form');
+    form.append(lab)
+
+    lab.innerHTML= ` 
+    <input type="text" id="firstName" placeholder="first name" required>
+    <input type="text" id="lastName" placeholder="last name" required>
+    <input type="text" id="age" placeholder="age" required>  `
+
+  }
+let button=document.querySelector('button');
+button.addEventListener('click', (element)=>{
+  element.preventDefault();
+  let person={
+
+    firstName:document.querySelector('#firstName'),
+
+    lastName:document.querySelector('#lastName'),
+
+    age:document.querySelector('#age')
+
+  }
+
+  console.log(person)
+
+
+});
+
+
+  initForm()
+
+  // Code here
+</script>
